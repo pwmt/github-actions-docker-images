@@ -75,13 +75,13 @@ jobs:
           registry: ${{ env.REGISTRY }}
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-      - name: Build and push Docker image (Ubuntu nuble)
+      - name: Build and push Docker image (Ubuntu nnble)
         uses: docker/build-push-action@v5
         with:
           context: ./ubuntu
-          file: ./ubuntu/Dockerfile.nuble
+          file: ./ubuntu/Dockerfile.noble
           push: true
-          tags: ${{ env.REGISTRY }}/pwmt/github-actions-ubuntu:nuble
+          tags: ${{ env.REGISTRY }}/pwmt/github-actions-ubuntu:noble
       - name: Build and push Docker image (Ubuntu jammy)
         uses: docker/build-push-action@v5
         with:
