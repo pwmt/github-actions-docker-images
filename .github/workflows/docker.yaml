@@ -9,10 +9,9 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository }}
 
 jobs:
-  build-and-push-image:
+  build-and-push-image-arch:
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -31,4 +30,62 @@ jobs:
         with:
           context: ./archlinux
           push: true
-          tags: pwmt/github-actions-archlinux:latest
+          tags: ${{ env.REGISTRY }}/pwmt/github-actions-archlinux:latest
+
+  build-and-push-image-debian:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Log in to the Container registry
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Build and push Docker image (Debian trixie)
+        uses: docker/build-push-action@v5
+        with:
+          context: ./debian
+          file: ./debian/Dockerfile.trixie
+          push: true
+          tags: ${{ env.REGISTRY }}/pwmt/github-actions-debian:trixie
+      - name: Build and push Docker image (Debian bookworm)
+        uses: docker/build-push-action@v5
+        with:
+          context: ./debian
+          file: ./debian/Dockerfile.bookworm
+          push: true
+          tags: ${{ env.REGISTRY }}/pwmt/github-actions-debian:bookworm
+
+  build-and-push-image-ubuntu:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Log in to the Container registry
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Build and push Docker image (Ubuntu nuble)
+        uses: docker/build-push-action@v5
+        with:
+          context: ./ubuntu
+          file: ./ubuntu/Dockerfile.nuble
+          push: true
+          tags: ${{ env.REGISTRY }}/pwmt/github-actions-ubuntu:nuble
+      - name: Build and push Docker image (Ubuntu jammy)
+        uses: docker/build-push-action@v5
+        with:
+          context: ./ubuntu
+          file: ./ubuntu/Dockerfile.jammy
+          push: true
+          tags: ${{ env.REGISTRY }}/pwmt/github-actions-ubuntu:jammy
