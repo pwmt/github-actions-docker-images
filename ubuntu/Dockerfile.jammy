@@ -1,0 +1,45 @@
+FROM ubuntu:jammy
+
+RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
+RUN apt-get update && apt-get -y upgrade
+RUN apt-get -y --no-install-recommends install apt-utils
+
+RUN apt-get -y --no-install-recommends install \
+  appstream-util \
+  check \
+  desktop-file-utils \
+  doxygen \
+  fiu-utils \
+  gcc \
+  gettext \
+  git \
+  graphviz \
+  libcairo2-dev \
+  libdjvulibre-dev \
+  libfiu-dev \
+  libglib2.0-dev \
+  libgtk-3-dev \
+  libjson-glib-dev \
+  libmagic-dev \
+  libmupdf-dev \
+  libpoppler-glib-dev \
+  librsvg2-bin \
+  libseccomp-dev \
+  libspectre-dev \
+  libsqlite3-dev \
+  libsynctex-dev \
+  meson \
+  ninja-build \
+  pkgconf \
+  python3 \
+  python3-clang \
+  python3-pip \
+  python3-sphinx \
+  python3-sphinx-rtd-theme \
+  xvfb
+
+RUN pip3 install  \
+      git+https://github.com/jnikula/hawkmoth@master
+
+# Clean-up
+RUN rm -rf /var/lib/apt/lists/* && apt-get --purge remove -y .\*-doc$ && apt-get clean -y
