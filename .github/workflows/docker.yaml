@@ -26,7 +26,7 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Build and push Docker image (Arch)
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v6
         with:
           context: ./archlinux
           push: true
@@ -47,14 +47,14 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Build and push Docker image (Debian trixie)
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v6
         with:
           context: ./debian
           file: ./debian/Dockerfile.trixie
           push: true
           tags: ${{ env.REGISTRY }}/pwmt/github-actions-debian:trixie
       - name: Build and push Docker image (Debian bookworm)
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v6
         with:
           context: ./debian
           file: ./debian/Dockerfile.bookworm
@@ -76,14 +76,14 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Build and push Docker image (Ubuntu nnble)
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v6
         with:
           context: ./ubuntu
           file: ./ubuntu/Dockerfile.noble
           push: true
           tags: ${{ env.REGISTRY }}/pwmt/github-actions-ubuntu:noble
       - name: Build and push Docker image (Ubuntu jammy)
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v6
         with:
           context: ./ubuntu
           file: ./ubuntu/Dockerfile.jammy
