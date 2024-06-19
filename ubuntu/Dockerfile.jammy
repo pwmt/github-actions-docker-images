@@ -6,7 +6,6 @@ RUN apt-get -y --no-install-recommends install apt-utils
 
 RUN apt-get -y --no-install-recommends install \
   appstream-util \
-  check \
   desktop-file-utils \
   doxygen \
   fiu-utils \

@@ -7,7 +7,6 @@ RUN apt-get -y --no-install-recommends -V install apt-utils
 RUN apt-get -y --no-install-recommends -V install \
   appstream-util \
   bash-completion \
-  check \
   desktop-file-utils \
   doxygen \
   fish \

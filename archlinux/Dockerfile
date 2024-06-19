@@ -41,7 +41,6 @@ RUN \
   yay -S --noconfirm \
     appstream-glib \
     cairo \
-    check \
     clang \
     cmake \
     djvulibre \
