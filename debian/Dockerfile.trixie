@@ -10,14 +10,12 @@ RUN apt-get -y --no-install-recommends -V install \
   desktop-file-utils \
   doxygen \
   fish \
-  fiu-utils \
   gcc \
   gettext \
   git \
   graphviz \
   libcairo2-dev \
   libdjvulibre-dev \
-  libfiu-dev \
   libglib2.0-dev \
   libgtk-3-dev \
   libjson-glib-dev \
