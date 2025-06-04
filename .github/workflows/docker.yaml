@@ -53,13 +53,6 @@ jobs:
           file: ./debian/Dockerfile.trixie
           push: true
           tags: ${{ env.REGISTRY }}/pwmt/github-actions-debian:trixie
-      - name: Build and push Docker image (Debian bookworm)
-        uses: docker/build-push-action@v6
-        with:
-          context: ./debian
-          file: ./debian/Dockerfile.bookworm
-          push: true
-          tags: ${{ env.REGISTRY }}/pwmt/github-actions-debian:bookworm
 
   build-and-push-image-ubuntu:
     runs-on: ubuntu-latest
@@ -82,10 +75,3 @@ jobs:
           file: ./ubuntu/Dockerfile.noble
           push: true
           tags: ${{ env.REGISTRY }}/pwmt/github-actions-ubuntu:noble
-      - name: Build and push Docker image (Ubuntu jammy)
-        uses: docker/build-push-action@v6
-        with:
-          context: ./ubuntu
-          file: ./ubuntu/Dockerfile.jammy
-          push: true
-          tags: ${{ env.REGISTRY }}/pwmt/github-actions-ubuntu:jammy
