@@ -5,7 +5,7 @@ RUN apt-get update && apt-get -y --no-install-recommends -V full-upgrade
 RUN apt-get -y --no-install-recommends -V install apt-utils
 
 RUN apt-get -y --no-install-recommends -V install \
-  appstream-util \
+  appstream \
   bash-completion \
   desktop-file-utils \
   doxygen \
