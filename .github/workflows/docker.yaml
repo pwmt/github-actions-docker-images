@@ -53,6 +53,13 @@ jobs:
           file: ./debian/Dockerfile.trixie
           push: true
           tags: ${{ env.REGISTRY }}/pwmt/github-actions-debian:trixie
+      - name: Build and push Docker image (Debian forky)
+        uses: docker/build-push-action@v6
+        with:
+          context: ./debian
+          file: ./debian/Dockerfile.forky
+          push: true
+          tags: ${{ env.REGISTRY }}/pwmt/github-actions-debian:forky
 
   build-and-push-image-ubuntu:
     runs-on: ubuntu-latest
