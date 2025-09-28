@@ -36,6 +36,7 @@ RUN apt-get -y --no-install-recommends -V install \
   python3-sphinx \
   python3-sphinx-rtd-theme \
   xauth \
+  weston \
   xvfb
 
 RUN pip3 install --break-system-packages \

@@ -59,7 +59,6 @@ RUN \
     libspectre \
     libsynctex \
     meson \
-    meson \
     mime-types \
     ninja \
     poppler-glib \
@@ -67,6 +66,7 @@ RUN \
     python-pip \
     shared-mime-info \
     sqlite \
+    weston \
     xorg-server-xvfb \
     xorg-xauth \
     yajl
