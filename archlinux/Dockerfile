@@ -41,15 +41,12 @@ RUN \
   yay -S --noconfirm \
     appstream \
     cairo \
-    clang \
-    cmake \
     djvulibre \
     doxygen \
     file \
     gettext \
     glib2 \
     gtk3 \
-    gtk4 \
     json-glib \
     libmupdf \
     libnotify \
@@ -67,16 +64,14 @@ RUN \
     sqlite \
     weston \
     xorg-server-xvfb \
-    xorg-xauth \
-    yajl
+    xorg-xauth
 
 USER root
 RUN pip3 install --break-system-packages \
       sphinx \
       sphinx-rtd-theme \
       breathe \
-      git+https://github.com/jnikula/hawkmoth@master \
-      Clang
+      git+https://github.com/jnikula/hawkmoth@master
 
 # Cleanup
 RUN pacman -Rscn yay go --noconfirm
