@@ -39,7 +39,7 @@ USER docker
 # Install pwmt dependencies
 RUN \
   yay -S --noconfirm \
-    appstream-glib \
+    appstream \
     cairo \
     clang \
     cmake \
