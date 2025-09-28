@@ -51,7 +51,6 @@ RUN \
     gtk3 \
     gtk4 \
     json-glib \
-    libfui \
     libmupdf \
     libnotify \
     librsvg \
