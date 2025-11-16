@@ -28,7 +28,6 @@ RUN apt-get -y --no-install-recommends -V install \
   libspectre-dev \
   libsqlite3-dev \
   libsynctex-dev \
-  meson \
   ninja-build \
   pkgconf \
   python3 \
@@ -41,7 +40,8 @@ RUN apt-get -y --no-install-recommends -V install \
   xvfb
 
 RUN pip3 install --break-system-packages \
-      git+https://github.com/jnikula/hawkmoth@master
+      git+https://github.com/jnikula/hawkmoth@master \
+      meson
 
 # Clean-up
 RUN rm -rf /var/lib/apt/lists/* && apt-get --purge remove -y .\*-doc$ && apt-get clean -y
