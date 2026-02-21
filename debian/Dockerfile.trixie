@@ -14,6 +14,7 @@ RUN apt-get -y --no-install-recommends -V install \
   gettext \
   git \
   graphviz \
+  libarchive-dev \
   libcairo2-dev \
   libdjvulibre-dev \
   libglib2.0-dev \
