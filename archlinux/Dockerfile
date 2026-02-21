@@ -48,8 +48,8 @@ RUN \
     glib2 \
     gtk3 \
     json-glib \
+    libarchive \
     libmupdf \
-    libnotify \
     librsvg \
     libseccomp \
     libspectre \
