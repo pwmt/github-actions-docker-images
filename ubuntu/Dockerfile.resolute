@@ -1,0 +1,35 @@
+FROM ubuntu:resolute
+
+RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
+RUN apt-get update && apt-get -y --no-install-recommends -V full-upgrade && apt-get -y --no-install-recommends -V install apt-utils
+
+RUN apt-get -y --no-install-recommends -V install \
+  appstream \
+  desktop-file-utils \
+  doxygen \
+  gcc \
+  gettext \
+  graphviz \
+  libarchive-dev \
+  libcairo2-dev \
+  libdjvulibre-dev \
+  libglib2.0-dev \
+  libgtk-3-dev \
+  libjson-glib-dev \
+  libmagic-dev \
+  libmupdf-dev \
+  libpoppler-glib-dev \
+  librsvg2-bin \
+  libseccomp-dev \
+  libspectre-dev \
+  libsqlite3-dev \
+  libsynctex-dev \
+  meson \
+  ninja-build \
+  pkgconf \
+  python3 \
+  python3-sphinx \
+  python3-sphinx-rtd-theme \
+  weston \
+  xauth \
+  xvfb
