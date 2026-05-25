@@ -50,6 +50,7 @@ RUN \
     gtk4 \
     json-glib \
     libarchive \
+    libdisplay-info \
     libmupdf \
     librsvg \
     libseccomp \
