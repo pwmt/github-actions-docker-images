@@ -46,7 +46,6 @@ RUN \
     file \
     gettext \
     glib2 \
-    gtk3 \
     gtk4 \
     json-glib \
     libarchive \
