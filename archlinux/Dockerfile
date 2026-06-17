@@ -1,7 +1,7 @@
 FROM archlinux:latest
 
 # Update package database, keys and current packages
-RUN echo "Server = http://mirror.digitalnova.at/archlinux/\$repo/os/\$arch" | tee /etc/pacman.d/mirrorlist
+RUN echo "Server = http://mirror.easyname.at/archlinux/\$repo/os/\$arch" | tee /etc/pacman.d/mirrorlist
 
 RUN pacman -Sy --noconfirm
 RUN pacman-key --init
