@@ -65,7 +65,8 @@ RUN \
     sqlite \
     weston \
     xorg-server-xvfb \
-    xorg-xauth
+    xorg-xauth \
+    xxhash
 
 USER root
 RUN pip3 install --break-system-packages \

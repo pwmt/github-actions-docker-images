@@ -26,6 +26,7 @@ RUN apt-get -y --no-install-recommends -V install \
   libspectre-dev \
   libsqlite3-dev \
   libsynctex-dev \
+  libxxhash-dev \
   meson \
   ninja-build \
   pkgconf \
